@@ -41,3 +41,42 @@ Calcula e retorna as métricas agregadas das transações que aconteceram **excl
     "min": 10.00,
     "max": 500.00
   }
+```
+
+---
+
+# Desafios Extras e Diferenciais Técnicos
+
+A seguir, estão listados alguns desafios extras para elevar o nível da solução, testar os limites da aplicação e demonstrar boas práticas de engenharia de software e arquitetura.
+
+---
+
+## 🎯 Lista de Desafios Extras
+
+- [ ] **Testes Automatizados**
+    * Implementar testes unitários e/ou funcionais integrados.
+    * *Foco na efetividade:* Garantir a cobertura não apenas do "caminho feliz", mas também de cenários de exceção, dados inválidos e concorrência.
+
+- [ ] **Containerização**
+    * Criar os arquivos necessários (`Dockerfile` e/ou `docker-compose.yml`) para disponibilizar e rodar a aplicação isolada dentro de um container. *(Não é necessário publicar a imagem).*
+
+- [ ] **Logs**
+    * Estruturar a aplicação para reportar informações relevantes sobre o que está acontecendo em tempo de execução. Rastreabilidade essencial para o diagnóstico de problemas na aplicação trabalhando sob carga.
+
+- [X] **Observabilidade**
+    * Disponibilizar endpoint para a verificação de saúde do sistema (*healthcheck*).
+
+- [ ] **Performance & Benchmarking**
+    * Estimar, medir e documentar o tempo exato de computação que a aplicação gasta para calcular e consolidar as estatísticas.
+
+- [X] **Tratamento de Erros Customizado**
+    * Explorar os recursos do Spring Boot para interceptar e customizar os retornos de erro padrão da API, devolvendo respostas semânticas e limpas para o cliente.
+
+- [ ] **Documentação da API**
+    * Documentar formalmente os contratos de entrada e saída dos endpoints da API utilizando ferramentas e padrões de mercado (ex: OpenAPI / Swagger).
+
+- [ ] **Documentação do Sistema**
+    * Escrever um guia claro e objetivo explicando o passo a passo para que outra pessoa desenvolvedora consiga buildar (construir) e executar a aplicação localmente pela primeira vez.
+
+- [ ] **Configurações Dinâmicas**
+    * Tornar a janela de tempo do cálculo de estatísticas totalmente configurável. O padrão deve ser 60 segundos, mas o sistema deve aceitar outros valores (como 120 segundos) sem necessidade de alterar o código-fonte.

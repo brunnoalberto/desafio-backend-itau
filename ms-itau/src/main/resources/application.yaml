@@ -1,3 +1,18 @@
 spring:
   application:
     name: ms-itau
+server:
+  port: 8000
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health
+      path-mapping:
+        health: healthcheck
+  endpoint:
+    health:
+      probes:
+        enabled: false
