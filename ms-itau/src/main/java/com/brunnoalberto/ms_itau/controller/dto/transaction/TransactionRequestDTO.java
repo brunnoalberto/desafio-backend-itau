@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 public record TransactionRequestDTO(
-        @NotNull()
-        @PositiveOrZero()
+        @NotNull(message = "O campo 'valor' não pode ser vazio.")
+        @PositiveOrZero(message = "O campo 'valor' tem que ser igual ou maior que 0.")
         BigDecimal valor,
 
-        @NotNull()
-        @PastOrPresent()
+        @NotNull(message = "O campo 'dataHora' não pode ser vazio.")
+        @PastOrPresent(message = "O campo 'datahora' não pode ser futuro.")
         OffsetDateTime dataHora
     ) {
 
